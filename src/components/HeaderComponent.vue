@@ -3,10 +3,12 @@
     <a href="#" class="logo"> Portfolio. </a>
 
     <div class="dropdown">
-      <button class="bars">
-        <font-awesome-icon class="barsChild" :icon="['fas', 'bars']" color="white" />
-      </button>
-      <div class="dropdown-content">
+      <font-awesome-icon class="menu-icon" :icon="['fas', 'bars']" color="white" />
+
+      <!-- <button class="bars">
+        <font-awesome-icon class="menu-icon" :icon="['fas', 'bars']" color="white" />
+      </button> -->
+      <!-- <div class="dropdown-content">
         <a href="#"> Home </a>
         <hr>
         <a href="#"> About </a>
@@ -16,7 +18,7 @@
         <a href="#"> Portfolio </a>
         <hr>
         <a href="#"> Contact </a>
-      </div>
+      </div> -->
     </div>
 
     <nav ref="navbarRef" class="navbar">
@@ -49,38 +51,47 @@ export default defineComponent({
 
 <style scoped>
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  background: rgb(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+  left: 0;
+  width: 100%;
+  padding: 2rem 9%;
+  background: var(--bg-color);
   display: flex;
-  padding: 2rem 10%;
   justify-content: space-between;
+  align-items: center;
   z-index: 100;
+  box-shadow: 0 0 .4rem var(--main-color);
 }
 
 .logo {
-  font-size: 2rem;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--text-color);
+  font-weight: 600;
+  cursor:default;
 }
 
 .navbar a {
-  font-size: 1.5rem;
-  color: #fff;
-  text-decoration: none;
+  font-size: 1.7rem;
+  color: var(--text-color);
   font-weight: 500;
-  margin-left: 2.5rem;
+  text-decoration: none;
+  margin-left: 3.5rem;
+  transition: .5s ease;
 }
 
 .navbar a:hover {
-  color: orange;
-  font-size: 1.8rem;
-  transition: font-size 0.3s ease-in-out;
+  color: var(--main-color);
 }
 
-.bars {
+.menu-icon{
+ font-size:2.7rem;
+ color: var(--text-color);
+ background-color: transparent;
+ display: none;
+}
+
+/* .bars {
   display: none;
   background-color: transparent;
   border: none;
@@ -111,7 +122,7 @@ header {
   display: none;
   position: fixed;
   background: rgb(0, 0, 0, 0.5);
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(10px);
   min-width: max-content;
   z-index: 50;
   right: 5px;
@@ -128,7 +139,7 @@ header {
   display: block;
   font-size: 16px;
   text-shadow: 1px 1px 2px orange, 0 0 1em orange, 0 0 0.2em orange;
-}
+} */
 
 .dropdown:hover .dropdown-content {display: block;}
 
@@ -137,7 +148,7 @@ header {
     padding: 1.3rem 2% 1.3rem 5%;
   }
 
-  .bars {
+  .menu-icon {
     display: block;
   }
 
