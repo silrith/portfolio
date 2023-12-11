@@ -47,10 +47,10 @@ export default defineComponent({
     return {
       name: '',
       links: [
-        { href: 'http://www.twitter.com', icon: ['fab', 'facebook-f'] },
+        { href: 'https://twitter.com/berkmiyimkiben', icon: ['fab', 'x-twitter'] },
         { href: 'http://www.github.com/wanudell', icon: ['fab', 'github'] },
-        { href: 'http://www.linkedin.com', icon: ['fab', 'instagram'] },
-        { href: 'http://www.linkedin.com', icon: ['fab', 'linkedin-in'] }
+        { href: 'https://www.instagram.com/berkmiyimki/', icon: ['fab', 'instagram'] },
+        { href: 'https://www.linkedin.com/in/berk-%C3%B6-51218918b/', icon: ['fab', 'linkedin-in'] }
       ]
     }
   },
@@ -59,11 +59,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-section {
-  min-height: 100vh;
-  padding: 10rem 9% 2rem;
-}
-
 .home {
   display: flex;
   align-items: center;
@@ -100,87 +95,9 @@ section {
   line-height: 1.3;
 }
 
-.home-content .text-animate {
-  position: relative;
-  width: 32.8rem;
-}
-
-.home-content .text-animate h3 {
-  font-size: 3.4rem;
-  font-weight: 700;
-  color: transparent;
-  -webkit-text-stroke: 0.7px var(--main-color);
-}
-
-.home-content .text-animate h3::before,
-.home-content .text-animate h3::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: 0.3s ease-out;
-}
-
-.home-content .text-animate h3:hover::before {
-  color: orange;
-  transform: translate(4px, 4px);
-  -webkit-text-stroke: 0.7px black;
-}
-
-.home-content .text-animate h3:hover::after {
-  color: #77efff;
-  transform: translate(8px, 8px);
-  -webkit-text-stroke: 0.7px black;
-}
-
 .home-content p {
   font-size: 1.6rem;
   margin: 2rem 0 4rem;
-}
-
-span {
-  color: var(--main-color);
-}
-
-.btn-box {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  widows: 30rem;
-  height: 5rem;
-}
-
-.btn-box .btn {
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 15rem;
-  background-color: var(--main-color);
-  border: 0.2rem solid var(--main-color);
-  border-radius: 0.8rem;
-  font-size: 1.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
-  color: var(--bg-color);
-  z-index: 1;
-  overflow: hidden;
-}
-
-.btn-box .btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: var(--bg-color);
-  z-index: -1;
-  transition: 1s;
-}
-
-.btn-box .btn:hover::before {
-  width: 100%;
 }
 
 .btn-box .btn:nth-child(2) {
@@ -194,10 +111,6 @@ span {
 
 .btn-box .btn:nth-child(2)::before {
   background-color: var(--main-color);
-}
-
-.btn-box .btn:hover {
-  color: var(--main-color);
 }
 
 .imgHover{
@@ -215,13 +128,13 @@ span {
     opacity: .5;
   }
   25%{
-    opacity: .25;
+    opacity: .1;
   }
   50%{
     opacity: .5;
   }
   75%{
-    opacity: 0.25;
+    opacity: .1;
   }
   100%{
     opacity: .5;

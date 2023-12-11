@@ -52,9 +52,9 @@ export default defineComponent({
       headerTabs: [
         { tabName: 'Home', routeName: '/' },
         { tabName: 'About', routeName: '/about' },
-        { tabName: 'Services', routeName: '/' },
-        { tabName: 'Portfolio', routeName: '/' },
-        { tabName: 'Contact', routeName: '/' }
+        { tabName: 'Education', routeName: '/education' },
+        { tabName: 'Skills', routeName: '/skills' },
+        { tabName: 'Contact', routeName: '/contact' }
       ]
     }
   },
@@ -85,7 +85,7 @@ header {
 }
 
 .navbar a {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   color: var(--text-color);
   font-weight: 500;
   text-decoration: none;
@@ -182,7 +182,7 @@ header {
 
   .navbar a {
     font-size: 1.3rem;
-    padding: 1.3rem 10%;
+    padding: 1rem 10%;
     width: max-content;
   }
 

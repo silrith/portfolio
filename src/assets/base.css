@@ -1,7 +1,6 @@
 :root {
   --bg-color: #081b29;
   --second-bg-color: #112e42;
-  --third-bg-color: #08FF2E;
   --text-color: #ededed;
   --main-color: #00abf0;
   
@@ -76,4 +75,97 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+}
+
+span {
+  color: var(--main-color);
+}
+
+.heading{
+  font-size: 5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.btn-box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 5rem;
+}
+
+.btn-box .btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  background-color: var(--main-color);
+  border: 0.2rem solid var(--main-color);
+  border-radius: 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: var(--bg-color);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn-box .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--bg-color);
+  z-index: -1;
+  transition: 1s;
+}
+
+.btn-box .btn:hover::before {
+  width: 100%;
+}
+
+.btn-box .btn:hover {
+  color: var(--main-color);
+}
+
+.text-animate {
+  position: relative;
+  width: 32.8rem;
+}
+
+.text-animate h3 {
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 0.7px var(--main-color);
+}
+
+.text-animate h3::before,
+.text-animate h3::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s ease-out;
+}
+
+.text-animate h3:hover::before {
+  color: orange;
+  transform: translate(4px, 4px);
+  -webkit-text-stroke: 0.7px black;
+}
+
+.text-animate h3:hover::after {
+  color: #77efff;
+  transform: translate(8px, 8px);
+  -webkit-text-stroke: 0.7px black;
 }
