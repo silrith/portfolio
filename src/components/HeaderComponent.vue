@@ -22,11 +22,12 @@
     </div>
 
     <nav ref="navbarRef" class="navbar">
-      <a href="#"> Home </a>
+      <router-link v-for="tab in headerTabs" :key="tab.tabName" :to=tab.routeName>{{ tab.tabName }}</router-link>
+      <!-- <a href="#"> Home </a>
       <a href="#"> About </a>
       <a href="#"> Services </a>
       <a href="#"> Portfolio </a>
-      <a href="#"> Contact </a>
+      <a href="#"> Contact </a> -->
     </nav>
   </header>
 </template>
@@ -34,18 +35,30 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+interface Tabs {
+  tabName?: string
+  routeName: string
+}
+
 export default defineComponent({
   name: 'Header-Component',
   component: {},
   data(): {
     name: string
+    headerTabs: Tabs[]
   } {
     return {
-      name: ''
+      name: '',
+      headerTabs: [
+        { tabName: 'Home', routeName: '/' },
+        { tabName: 'About', routeName: '/about' },
+        { tabName: 'Services', routeName: '/' },
+        { tabName: 'Portfolio', routeName: '/' },
+        { tabName: 'Contact', routeName: '/' }
+      ]
     }
   },
-  methods: {
-  }
+  methods: {}
 })
 </script>
 
@@ -61,14 +74,14 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  box-shadow: 0 0 .4rem var(--main-color);
+  box-shadow: 0 0 0.4rem var(--main-color);
 }
 
 .logo {
   font-size: 2.5rem;
   color: var(--text-color);
   font-weight: 600;
-  cursor:default;
+  cursor: default;
 }
 
 .navbar a {
@@ -77,18 +90,18 @@ header {
   font-weight: 500;
   text-decoration: none;
   margin-left: 3.5rem;
-  transition: .5s ease;
+  transition: 0.5s ease;
 }
 
 .navbar a:hover {
   color: var(--main-color);
 }
 
-.menu-icon{
- font-size:2.7rem;
- color: var(--text-color);
- background-color: transparent;
- display: none;
+.menu-icon {
+  font-size: 2.7rem;
+  color: var(--text-color);
+  background-color: transparent;
+  display: none;
 }
 
 /* .bars {
@@ -141,7 +154,9 @@ header {
   text-shadow: 1px 1px 2px orange, 0 0 1em orange, 0 0 0.2em orange;
 } */
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 @media (max-width: 992px) {
   header {
