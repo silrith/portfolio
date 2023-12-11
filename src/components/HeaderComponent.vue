@@ -1,33 +1,16 @@
 <template>
   <header>
     <a href="#" class="logo"> Portfolio. </a>
-
-    <div class="dropdown">
-      <font-awesome-icon class="menu-icon" :icon="['fas', 'bars']" color="white" />
-
-      <!-- <button class="bars">
-        <font-awesome-icon class="menu-icon" :icon="['fas', 'bars']" color="white" />
-      </button> -->
-      <!-- <div class="dropdown-content">
-        <a href="#"> Home </a>
-        <hr>
-        <a href="#"> About </a>
-        <hr>
-        <a href="#"> Services </a>
-        <hr>
-        <a href="#"> Portfolio </a>
-        <hr>
-        <a href="#"> Contact </a>
-      </div> -->
-    </div>
-
-    <nav ref="navbarRef" class="navbar">
-      <router-link v-for="tab in headerTabs" :key="tab.tabName" :to=tab.routeName>{{ tab.tabName }}</router-link>
-      <!-- <a href="#"> Home </a>
-      <a href="#"> About </a>
-      <a href="#"> Services </a>
-      <a href="#"> Portfolio </a>
-      <a href="#"> Contact </a> -->
+    <font-awesome-icon class="menu-icon" id="menu-icon" :icon="['fas', 'bars']" color="white" />
+    <nav ref="navbarElement" class="navbar">
+      <router-link
+        ref="navbarElementLink"
+        class="navbar-links"
+        v-for="tab in headerTabs"
+        :key="tab.tabName"
+        :to="tab.routeName"
+        >{{ tab.tabName }}</router-link
+      >
     </nav>
   </header>
 </template>
@@ -58,7 +41,12 @@ export default defineComponent({
       ]
     }
   },
-  methods: {}
+  methods: {
+    // showNavbar(){
+    //   let navBarElement : any = this.$refs.navbarElement;
+    //   navBarElement.style.display = (navBarElement.style.display == 'none') ? 'block' : 'none';
+    // }
+  }
 })
 </script>
 
@@ -104,91 +92,36 @@ header {
   display: none;
 }
 
-/* .bars {
+.navbar2 {
   display: none;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  font-size: 2.2rem;
-}
-
-.bars:hover .barsChild {
-  color: orange;
-  scale: 1.2;
-  transition: scale 0.3s ease;
-}
-
-.dropbtn {
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-  height: 100%;
-}
-
-.dropdown-content {
-  display: none;
-  position: fixed;
-  background: rgb(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  min-width: max-content;
-  z-index: 50;
-  right: 5px;
-  text-align: center;
-  padding: 1.3rem 5%;
-  border-radius: 5px;
-  border: 1px solid #333;
-}
-
-.dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  font-size: 16px;
-  text-shadow: 1px 1px 2px orange, 0 0 1em orange, 0 0 0.2em orange;
-} */
-
-.dropdown:hover .dropdown-content {
-  display: block;
 }
 
 @media (max-width: 992px) {
   header {
-    padding: 1.3rem 2% 1.3rem 5%;
+    padding: 2rem 4%;
   }
+}
 
+@media (max-width: 768px) {
   .menu-icon {
-    display: block;
+    display: inline-flex;
   }
 
   .navbar {
     position: absolute;
     top: 100%;
     right: 0;
-    width: 20%;
-    background: rgb(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    align-items: center;
+    width: 100%;
+    padding: 1rem 4%;
+    background: var(--bg-color);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
     display: none;
-    flex-direction: column;
-    align-items: end;
   }
 
-  .navbar a {
-    font-size: 1.3rem;
-    padding: 1rem 10%;
-    width: max-content;
-  }
-
-  .navbar a:hover {
-    color: orange;
-    font-size: 1.3rem;
+  .navbar .navbar-links {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
   }
 }
 </style>

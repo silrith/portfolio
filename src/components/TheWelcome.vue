@@ -188,6 +188,12 @@ export default defineComponent({
     background-position: right;
     justify-content: center;
     align-items: center;
+    background-image: none;
+    padding: 0 4%;
+  }
+
+  .home-content h1{
+    text-align: center;
   }
 
   .btn-box {
@@ -198,6 +204,10 @@ export default defineComponent({
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+  }
+
+  .imgHover{
+    display: none;
   }
 }
 </style>
