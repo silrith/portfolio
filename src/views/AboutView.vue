@@ -57,10 +57,17 @@ span{
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border-top: .5rem solid var(--second-bg-color);
-  border-bottom: .5rem solid var(--second-bg-color);
-  border-left: .5rem solid var(--main-color);
-  border-right: .5rem solid var(--main-color);
+  border-top: .5rem solid transparent;
+  border-bottom: .5rem solid transparent;
+  border-left: .3rem solid var(--main-color);
+  border-right: .3rem solid var(--main-color);
+  animation: aboutSpinner 8s linear infinite;
+}
+
+@keyframes aboutSpinner{
+  100%{
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .about-content{

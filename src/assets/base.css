@@ -66,6 +66,7 @@
 }
 
 html {
+  /* font-size: 75%; */
   overflow-x: hidden;
 }
 
@@ -143,14 +144,71 @@ span {
 }
 
 .text-animate h3 {
-  font-size: 3.4rem;
+  margin-top: 1rem;
+  font-size: 3.2rem;
   font-weight: 700;
   color: transparent;
-  -webkit-text-stroke: 0.7px var(--main-color);
+  -webkit-text-stroke: .5px orange;
+  background-image: linear-gradient(orange, orangered);
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-position: -33rem 0;
+  animation: homeBgText 6s linear infinite;
 }
 
-.text-animate h3::before,
-.text-animate h3::after {
+@keyframes homeBgText {
+  0%,
+  10%,
+  100% {
+    background-position: -33rem 0;
+  }
+  65%,
+  85% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes homeCursorText {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+  65%,
+  78%,
+  85% {
+    width: 100%;
+    opacity: 1;
+  }
+  75%,81%{
+    opacity: 0;
+  }
+}
+
+.text-animate h3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-right: 2px solid orange;
+  animation: homeCursorText 6s linear infinite;
+}
+
+.text-animate2 {
+  position: relative;
+  width: 32.8rem;
+}
+
+.text-animate2 h3 {
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: var(--main-color);
+}
+
+.text-animate2 h3::before,
+.text-animate2 h3::after {
   content: attr(data-text);
   position: absolute;
   top: 0;
@@ -158,13 +216,13 @@ span {
   transition: 0.3s ease-out;
 }
 
-.text-animate h3:hover::before {
+.text-animate2 h3:hover::before {
   color: orange;
   transform: translate(4px, 4px);
   -webkit-text-stroke: 0.7px black;
 }
 
-.text-animate h3:hover::after {
+.text-animate2 h3:hover::after {
   color: #77efff;
   transform: translate(8px, 8px);
   -webkit-text-stroke: 0.7px black;
@@ -173,5 +231,12 @@ span {
 @media (max-width: 992px) {
   section {
     padding: 10rem 4% 2rem;
+  }
+  
+}
+
+@media (max-width: 520px) {
+  html {
+    font-size: 60%;
   }
 }

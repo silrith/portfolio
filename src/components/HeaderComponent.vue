@@ -1,6 +1,6 @@
 <template>
   <header>
-    <a href="#" class="logo"> Portfolio. </a>
+    <a href="#" class="logo"> Portfolio.</a>
     <font-awesome-icon
       @click="showNavbar"
       class="menu-icon"
@@ -38,12 +38,14 @@ export default defineComponent({
     hamburgerIcon: string[]
     xIcon: string[]
     headerTabs: Tabs[]
+    navbarActive: boolean
   } {
     return {
       name: '',
       iconName: ['fas', 'bars'],
       hamburgerIcon: ['fas', 'bars'],
       xIcon: ['fab', 'mixer'],
+      navbarActive: false,
       headerTabs: [
         { tabName: 'Home', routeName: '/' },
         { tabName: 'About', routeName: '/about' },
@@ -56,11 +58,9 @@ export default defineComponent({
   methods: {
     showNavbar() {
       let navBarElement: any = document.querySelector('.navbar')
-
-      this.iconName = this.iconName == this.hamburgerIcon
-        ? this.xIcon
-        :  this.hamburgerIcon;
+      this.iconName = this.navbarActive ? this.hamburgerIcon : this.xIcon;
       navBarElement.classList.toggle('active');
+      this.navbarActive = !this.navbarActive;
     }
   }
 })
@@ -86,6 +86,11 @@ header {
   color: var(--text-color);
   font-weight: 600;
   cursor: default;
+}
+
+.navbar{
+  position: relative;
+
 }
 
 .navbar a {

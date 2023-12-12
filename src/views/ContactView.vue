@@ -44,7 +44,7 @@
 <style scoped>
 .contact {
   min-height: auto;
-  padding-bottom: 7rem;
+  padding: 13rem 7rem;
 }
 
 .contact form {
@@ -159,5 +159,15 @@
 .contact form .textarea-field textarea:focus ~ .focus,
 .contact form .textarea-field textarea:valid ~ .focus {
   width: 100%;
+}
+
+@media(max-width: 762px){
+.contact{
+  padding: 35% 4% 5rem 5%;
+}
+
+  .contact form .input-box .input-field{
+    width: 100%;
+  }
 }
 </style>

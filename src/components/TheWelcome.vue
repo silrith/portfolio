@@ -5,9 +5,14 @@
 <template>
   <section class="home" id="home">
     <div class="home-content">
-      <h1>Hi, I'm <span>Berk Ozerdogan</span></h1>
+      <h1>
+        Hi, I'm
+        <div class="text-animate2">
+          <h3 data-text="Berk Ozerdogan" class="text-animate2">Berk Ozerdogan</h3>
+        </div>
+      </h1>
       <div class="text-animate">
-        <h3 data-text="Frontend Developer">Frontend Developer</h3>
+        <h3>{{status}}</h3>
       </div>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui laudantium quasi
@@ -39,13 +44,23 @@ export default defineComponent({
   name: 'Header-Component',
   component: {},
   data(): {
-    name: string
     href?: string
     icon?: string[]
     links: Link[]
+    status: string
+    statusList: string[]
+    statusNumber: number
   } {
     return {
-      name: '',
+      statusList: [
+        "Full Stack Developer",
+        "Frontend Developer",
+        "Backend Developer",
+        "Mobile Developer",
+        "UI Designer"
+      ],
+      status: 'Full Stack Developer',
+      statusNumber: 0,
       links: [
         { href: 'https://twitter.com/berkmiyimkiben', icon: ['fab', 'x-twitter'] },
         { href: 'http://www.github.com/wanudell', icon: ['fab', 'github'] },
@@ -54,7 +69,16 @@ export default defineComponent({
       ]
     }
   },
-  methods: {}
+  methods: {
+    rotateText() {
+      this.statusNumber += 1;
+      if(this.statusNumber == 5) this.statusNumber = 0;
+      this.status = this.statusList[this.statusNumber]
+    },
+  },
+  mounted(){
+    setInterval(this.rotateText, 6000);
+  }
 })
 </script>
 
@@ -113,9 +137,9 @@ export default defineComponent({
   background-color: var(--main-color);
 }
 
-.imgHover{
+.imgHover {
   position: absolute;
-  top:0;
+  top: 0;
   right: 0;
   width: 45%;
   height: 100%;
@@ -124,20 +148,20 @@ export default defineComponent({
 }
 
 @keyframes breathEffect {
-  0%{
-    opacity: .5;
+  0% {
+    opacity: 0.5;
   }
-  25%{
-    opacity: .1;
+  25% {
+    opacity: 0.1;
   }
-  50%{
-    opacity: .5;
+  50% {
+    opacity: 0.5;
   }
-  75%{
-    opacity: .1;
+  75% {
+    opacity: 0.1;
   }
-  100%{
-    opacity: .5;
+  100% {
+    opacity: 0.5;
   }
 }
 
@@ -162,17 +186,18 @@ export default defineComponent({
   box-shadow: 0 0 1rem var(--main-color);
 }
 
-.social-media a:nth-child(n){
+.social-media a:nth-child(n) {
   animation: move 4s infinite;
 }
 
-.social-media a:nth-child(2n){
+.social-media a:nth-child(2n) {
   animation: move 4s infinite;
   animation-delay: 2s;
 }
 
 @keyframes move {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -185,15 +210,15 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     text-align: justify;
-    background-position: right;
+    background-position: top;
+    background-size: contain;
     justify-content: center;
     align-items: center;
-    background-image: none;
     padding: 0 4%;
   }
 
-  .home-content h1{
-    text-align: center;
+  .home-content {
+    width: 100%;
   }
 
   .btn-box {
@@ -206,7 +231,7 @@ export default defineComponent({
     justify-content: space-evenly;
   }
 
-  .imgHover{
+  .imgHover {
     display: none;
   }
 }
