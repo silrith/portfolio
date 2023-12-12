@@ -1,7 +1,13 @@
 <template>
   <header>
     <a href="#" class="logo"> Portfolio. </a>
-    <font-awesome-icon class="menu-icon" id="menu-icon" :icon="['fas', 'bars']" color="white" />
+    <font-awesome-icon
+      @click="showNavbar"
+      class="menu-icon"
+      id="menu-icon"
+      :icon=iconName
+      color="white"
+    />
     <nav ref="navbarElement" class="navbar">
       <router-link
         ref="navbarElementLink"
@@ -28,10 +34,16 @@ export default defineComponent({
   component: {},
   data(): {
     name: string
+    iconName: string[]
+    hamburgerIcon: string[]
+    xIcon: string[]
     headerTabs: Tabs[]
   } {
     return {
       name: '',
+      iconName: ['fas', 'bars'],
+      hamburgerIcon: ['fas', 'bars'],
+      xIcon: ['fab', 'mixer'],
       headerTabs: [
         { tabName: 'Home', routeName: '/' },
         { tabName: 'About', routeName: '/about' },
@@ -42,10 +54,14 @@ export default defineComponent({
     }
   },
   methods: {
-    // showNavbar(){
-    //   let navBarElement : any = this.$refs.navbarElement;
-    //   navBarElement.style.display = (navBarElement.style.display == 'none') ? 'block' : 'none';
-    // }
+    showNavbar() {
+      let navBarElement: any = document.querySelector('.navbar')
+
+      this.iconName = this.iconName == this.hamburgerIcon
+        ? this.xIcon
+        :  this.hamburgerIcon;
+      navBarElement.classList.toggle('active');
+    }
   }
 })
 </script>
@@ -104,24 +120,30 @@ header {
 
 @media (max-width: 768px) {
   .menu-icon {
-    display: inline-flex;
+    display: block;
   }
 
   .navbar {
     position: absolute;
     top: 100%;
-    right: 0;
+    left: -100%;
     width: 100%;
     padding: 1rem 4%;
-    background: var(--bg-color);
+    background: rgb(8, 27, 41, 0.9);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
-    display: none;
+    transition: .25s ease;
+    transition-delay: .25s;
+  }
+
+  .navbar.active {
+    left: 0;
   }
 
   .navbar .navbar-links {
     display: block;
     font-size: 2rem;
     margin: 3rem 0;
+    z-index: 1;
   }
 }
 </style>
