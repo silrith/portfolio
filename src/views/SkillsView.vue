@@ -1,10 +1,10 @@
 <template>
     <section class="skills" id="skills">
-        <h2 class="heading">My <span>Skills</span></h2>
+        <h2 class="heading">{{ $t("header.skill") }}</h2>
 
         <div class="skills-row">
             <div class="skills-column">
-                <h3 class="title">Coding Skills</h3>
+                <h3 class="title">{{ $t("skills.coding") }}</h3>
                 <div class="skills-box">
                     <div class="skills-content">
 
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="skills-column">
-                <h3 class="title">Professional Skills</h3>
+                <h3 class="title">{{ $t("skills.professional") }}</h3>
                 <div class="skills-box">
                     <div class="skills-content">
 

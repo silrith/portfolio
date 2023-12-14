@@ -1,0 +1,56 @@
+{
+    "header" : {
+        "portfolio" : "Portfolio.",
+        "home" : "Home",
+        "about" : "About",
+        "education" : "Education",
+        "skill" : "Skills",
+        "contact" : "Contact",
+        "language" : "Language"
+    },
+    "home" : {
+        "hi" : "Hi, I'm",
+        "hire" : "Hire Me",
+        "talk" : "Let's Talk"
+    },
+    "about" : {
+        "about" : "About",
+        "me" : "Me",
+        "read" : "My Experiences"
+    },
+    "education" : {
+        "journey" : "Journey",
+        "experience" : "Experience",
+        "university" : "University",
+        "university2" : "University",
+        "bachelor" : "Bachelor Degree",
+        "master" : "Master-Degree",
+        "duzce" : "Duzce",
+        "chemistry" : "Chemistry",
+        "itü" : "Istanbul Commerce University",
+        "iqe" : "International Quality Engineering",
+        "certification" : "Certification Program",
+        "baek" : "Bilgeadam Academy Educational Institution",
+        "fsd" : "Full Stack Developer Boost Program",
+        "educationCompany" : "Educational Institution"
+    },
+    "skills" : {
+        "skills" : "My Skills",
+        "my" : "My",
+        "coding" : "Coding Skills",
+        "professional" : "Professional Skills"
+    },
+    "contact" : {
+        "fullname" : "Full Name",
+        "email" : "Email Address",
+        "mobile" : "Mobile Number",
+        "subject" : "Email Subject",
+        "message" : "Your Message",
+        "submit" : "Submit"
+    },
+    "homeShortParagraph" : "Hello, as a Full Stack Developer, I produce user-friendly and innovative solutions by focusing on Front and Back End development technologies. My greatest passion is to constantly improve myself and provide solutions to real-world problems using technology.",
+    "aboutShortParagraph" : { 
+        "one": "I was born in Ankara/Turkey in 1990, I am",
+        "two": "years old and I spend my life coding. I live in Istanbul. I am currently developing active freelance projects for ongoing companies."
+    }
+}

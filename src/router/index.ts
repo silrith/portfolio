@@ -29,7 +29,10 @@ const router = createRouter({
       name: 'contact',
       component: () => import('../views/ContactView.vue')
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { top: 0 }
+  },
 })
 
 export default router

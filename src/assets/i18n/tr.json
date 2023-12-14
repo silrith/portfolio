@@ -1,0 +1,56 @@
+{
+    "header" : {
+        "portfolio" : "Portfolyo.",
+        "home" : "Ana Sayfa",
+        "about" : "Hakkımda",
+        "education" : "Eğitim",
+        "skill" : "Yetenekler",
+        "contact" : "İletişim",
+        "language" : "Dil"
+    },
+    "home" : {
+        "hi" : "Merhaba, Ben",
+        "hire" : "İşe Alım İçin",
+        "talk" : "Hadi Konuşalım"
+    },
+    "about" : {
+        "about" : "Hakkımda",
+        "me" : "Benim",
+        "read" : "Deneyimlerim İçin"
+    },
+    "education" : {
+        "journey" : "Yolculuğum",
+        "experience" : "Deneyim",
+        "university" : "Üniversite",
+        "university2" : "Üniversitesi",
+        "bachelor" : "Lisans Derecesi",
+        "master" : "Yüksek Lisans",
+        "duzce" : "Düzce",
+        "chemistry" : "Kimya",
+        "itü" : "İstanbul Ticaret Üniversitesi",
+        "iqe" : "Uluslararası Kalite Mühendisliği",
+        "certification" : "Sertifika Programı",
+        "baek" : "Bilgeadam Akademi Eğitim Kurumu",
+        "fsd" : "Full Stack Developer Boost Programı",
+        "educationCompany" : "Eğitim Kurumu"
+    },
+    "skills" : {
+        "skills" : "Yeteneklerim",
+        "my" : "Benim",
+        "coding" : "Kodlama Becerilerim",
+        "professional" : "Profesyonel Becerilerim"
+    },
+    "contact" : {
+        "fullname" : "Ad Soyad",
+        "email" : "Email Adresi",
+        "mobile" : "Telefon Numarası",
+        "subject" : "Email Konusu",
+        "message" : "Mesajınız",
+        "submit" : "Gönder"
+    },
+    "homeShortParagraph" : "Merhaba, Full Stack Developer olarak Ön ve Arka Yüz geliştirme teknolojilerine odaklanarak kullanıcı dostu ve yenilikçi çözümler üretiyorum. Kendimi sürekli geliştirmek ve teknolojiyi kullanarak gerçek dünya problemlerine çözümler sunmak benim en büyük tutkum.",
+    "aboutShortParagraph": {
+        "one" : "1990 yılında Ankara/Türkiye'de doğdum, ",
+        "two" : "yaşındayım ve hayatımı kodlayarak geçiriyorum. İstanbulda yaşıyorum. Şu anda devam eden firmalara aktif freelance projeler geliştiriyorum."
+    }
+}

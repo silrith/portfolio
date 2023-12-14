@@ -6,26 +6,24 @@
   <section class="home" id="home">
     <div class="home-content">
       <h1>
-        Hi, I'm
+        {{ $t('home.hi') }}
         <div class="text-animate2">
           <h3 data-text="Berk Ozerdogan" class="text-animate2">Berk Ozerdogan</h3>
         </div>
       </h1>
       <div class="text-animate">
-        <h3>{{status}}</h3>
+        <h3>{{ status }}</h3>
       </div>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui laudantium quasi
-        exercitationem nam aut totam consequuntur, perspiciatis impedit quam cupiditate ullam
-        debitis eius, nemo repellat, reprehenderit magni eveniet ipsum quo?
+        {{ $t('homeShortParagraph') }}
       </p>
       <div class="btn-box">
-        <router-link class="btn" to="/">Hire Me</router-link>
-        <router-link class="btn" to="/">Let's Talk</router-link>
+        <router-link @click="mailMe" class="btn" to="/">{{ $t('home.hire') }}</router-link>
+        <router-link @click="callMe" class="btn" to="/">{{ $t('home.talk') }}</router-link>
       </div>
       <div class="social-media">
-        <a :href="link.href" v-for="link in links" :key="link.href"
-          ><font-awesome-icon :icon="link.icon"
+        <a :href="link.href" v-for="link in links" :key="link.href" target="_blank"
+          ><font-awesome-icon class="linkIcon" :icon="link.icon"
         /></a>
       </div>
       <div class="imgHover"></div>
@@ -53,11 +51,11 @@ export default defineComponent({
   } {
     return {
       statusList: [
-        "Full Stack Developer",
-        "Frontend Developer",
-        "Backend Developer",
-        "Mobile Developer",
-        "UI Designer"
+        'Full Stack Developer',
+        'Frontend Developer',
+        'Backend Developer',
+        'Mobile Developer',
+        'UI Designer'
       ],
       status: 'Full Stack Developer',
       statusNumber: 0,
@@ -71,13 +69,21 @@ export default defineComponent({
   },
   methods: {
     rotateText() {
-      this.statusNumber += 1;
-      if(this.statusNumber == 5) this.statusNumber = 0;
+      this.statusNumber += 1
+      if (this.statusNumber == 5) this.statusNumber = 0
       this.status = this.statusList[this.statusNumber]
     },
+    callMe() {
+      const mobileNumber: string = '+905061678928'
+      window.location.href = 'tel:' + mobileNumber
+    },
+    mailMe() {
+      const emailAddress: string = 'berkozerdogan@gmail.com'
+      window.location.href = 'mailto:' + emailAddress
+    }
   },
-  mounted(){
-    setInterval(this.rotateText, 6000);
+  mounted() {
+    setInterval(this.rotateText, 6000)
   }
 })
 </script>
@@ -121,6 +127,7 @@ export default defineComponent({
 
 .home-content p {
   font-size: 1.6rem;
+  text-align: justify;
   margin: 2rem 0 4rem;
 }
 
@@ -184,6 +191,11 @@ export default defineComponent({
   background: var(--main-color);
   color: var(--second-bg-color);
   box-shadow: 0 0 1rem var(--main-color);
+}
+
+.social-media a:hover .linkIcon {
+  transition: transform 1s ease;
+  transform: rotate(360deg);
 }
 
 .social-media a:nth-child(n) {

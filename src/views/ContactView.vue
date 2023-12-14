@@ -1,25 +1,25 @@
 <template>
   <section class="contact" id="contact">
-    <h2 class="heading">Contact <span>Me</span></h2>
+    <h2 class="heading">{{$t("header.contact")}}</h2>
 
     <form action="#">
       <div class="input-box">
         <div class="input-field">
-          <input type="text" placeholder="Full Name" required />
+          <input type="text" :placeholder='$t("contact.fullname")' required />
           <span class="focus"></span>
         </div>
         <div class="input-field">
-          <input type="text" placeholder="Email Address" required />
+          <input type="text" :placeholder='$t("contact.email")' required />
           <span class="focus"></span>
         </div>
       </div>
       <div class="input-box">
         <div class="input-field">
-          <input type="number" placeholder="Mobile Number" required />
+          <input type="number" :placeholder='$t("contact.mobile")' required />
           <span class="focus"></span>
         </div>
         <div class="input-field">
-          <input type="text" placeholder="Email Subject" required />
+          <input type="text" :placeholder='$t("contact.subject")' required />
           <span class="focus"></span>
         </div>
       </div>
@@ -29,13 +29,13 @@
           id=""
           cols="30"
           rows="10"
-          placeholder="Your Message"
+          :placeholder='$t("contact.message")'
           required
         ></textarea>
         <span class="focus"></span>
       </div>
       <div class="contactButton">
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn">{{$t("contact.submit")}}</button>
       </div>
     </form>
   </section>

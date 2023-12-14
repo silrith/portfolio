@@ -1,0 +1,56 @@
+{
+    "header" : {
+        "portfolio" : "Portfolio.",
+        "home" : "Startseite",
+        "about" : "Über Mich",
+        "education" : "Ausbildung",
+        "skill" : "Fähigkeiten",
+        "contact" : "Kontakt",
+        "language" : "Sprache"
+    },
+    "home" : {
+        "hi" : "Hallo, Ich Bin",
+        "hire" : "Stellt Mich Ein",
+        "talk" : "Lass Uns Reden"
+    },
+    "about" : {
+        "about" : "Über Mich",
+        "me" : "Mich",
+        "read" : "Meine Erfahrungen"
+    },
+    "education" : {
+        "journey" : "Reise",
+        "experience" : "Erfahrung",
+        "university" : "Universität",
+        "university2" : "Universität",
+        "bachelor" : "Bachelor-Abschluss",
+        "master" : "Master-Abschluss",
+        "duzce" : "Duzce",
+        "chemistry" : "Chemie",
+        "itü" : "Handelsuniversität Istanbul",
+        "iqe" : "Internationale Qualitätstechnik",
+        "certification" : "Zertifizierungsprogramm",
+        "baek" : "Bildungseinrichtung der Bilgeadam Academy",
+        "fsd" : "Full-Stack-Entwickler-Boost-Programm",
+        "educationCompany" : "Bildungseinrichtung"
+    },
+    "skills" : {
+        "skills" : "Fähigkeiten",
+        "my" : "Meine",
+        "coding" : "Programmierkenntnisse",
+        "professional" : "Professionelle Fähigkeiten"
+    },
+    "contact" : {
+        "fullname" : "vollständiger Name",
+        "email" : "E-Mail Adresse",
+        "mobile" : "Handynummer",
+        "subject" : "E-Mail Betreff",
+        "message" : "Ihre Nachricht",
+        "submit" : "Einreichen"
+    },
+    "homeShortParagraph" : "Hallo, als Full-Stack-Entwickler erstelle ich benutzerfreundliche und innovative Lösungen, indem ich mich auf Front- und Back-End-Entwicklungstechnologien konzentriere. Meine größte Leidenschaft ist es, mich ständig zu verbessern und mithilfe von Technologie Lösungen für reale Probleme bereitzustellen.",
+    "aboutShortParagraph":{
+        "one" : "Ich wurde 1990 in Ankara/Türkei geboren, bin",
+        "two" : "Jahre alt und verbringe mein Leben mit Programmieren. Ich lebe in Istanbul. Derzeit entwickle ich aktive freiberufliche Projekte für bestehende Unternehmen."
+    }
+}
