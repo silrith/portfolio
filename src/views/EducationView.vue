@@ -136,7 +136,7 @@
   border: 0.2rem solid var(--main-color);
   border-radius: 0.6rem;
   margin-bottom: 2rem;
-  height: 13rem;
+  height: 15rem;
 }
 
 .education-content .content::before {
