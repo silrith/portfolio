@@ -19,12 +19,18 @@
         >{{ tab.tabName }}</router-link
       >
       <a href="#" class="navbar-links language"
-        >{{$t("header.language")}}
+        >{{ $t('header.language') }}
         <div class="languagePicker">
           <ul>
-            <li @click="changeLanguage('tr')"><img src="@/assets/flags/tr.png" alt="Turkey Flag" width="32" /></li>
-            <li @click="changeLanguage('en')"><img src="@/assets/flags/en.png" alt="Turkey Flag" width="32" /></li>
-            <li @click="changeLanguage('de')"><img src="@/assets/flags/de.png" alt="Turkey Flag" width="32" /></li>
+            <li @click="changeLanguage('tr')">
+              <img src="@/assets/flags/tr.png" alt="Turkey Flag" width="32" />
+            </li>
+            <li @click="changeLanguage('en')">
+              <img src="@/assets/flags/en.png" alt="Turkey Flag" width="32" />
+            </li>
+            <li @click="changeLanguage('de')">
+              <img src="@/assets/flags/de.png" alt="Turkey Flag" width="32" />
+            </li>
           </ul>
         </div>
       </a>
@@ -50,6 +56,12 @@ export default defineComponent({
     xIcon: string[]
     headerTabs: Tabs[]
     navbarActive: boolean
+    home: string
+    about: string
+    education: string
+    skills: string
+    contact: string
+    currentLanguage: string
   } {
     return {
       name: '',
@@ -57,6 +69,12 @@ export default defineComponent({
       hamburgerIcon: ['fas', 'bars'],
       xIcon: ['fab', 'mixer'],
       navbarActive: false,
+      home: this.$t('header.home'),
+      about: this.$t('header.about'),
+      education: this.$t('header.education'),
+      skills: this.$t('header.skill'),
+      contact: this.$t('header.contact'),
+      currentLanguage: this.$i18n.locale,
       headerTabs: [
         { tabName: this.$t('header.home'), routeName: '/' },
         { tabName: this.$t('header.about'), routeName: '/about' },
@@ -77,9 +95,23 @@ export default defineComponent({
       let navBarElement: any = document.querySelector('.navbar')
       navBarElement.classList.remove('active')
     },
-    changeLanguage(language:string){
-      localStorage.setItem("lang", language);
-      this.$i18n.locale = language;
+    changeLanguage(language: string) {
+      localStorage.setItem('lang', language)
+      this.$i18n.locale = language
+    }
+  },
+  watch: {
+    '$i18n.locale': function (newVal, oldVal) {
+      if (newVal !== oldVal) {
+        this.currentLanguage = newVal
+        this.headerTabs = [
+          { tabName: this.$t('header.home'), routeName: '/' },
+          { tabName: this.$t('header.about'), routeName: '/about' },
+          { tabName: this.$t('header.education'), routeName: '/education' },
+          { tabName: this.$t('header.skill'), routeName: '/skills' },
+          { tabName: this.$t('header.contact'), routeName: '/contact' }
+        ]
+      }
     }
   }
 })
@@ -165,7 +197,7 @@ header {
 }
 
 .languagePicker ul li {
-  background: rgb(0, 171, 240,.3);
+  background: rgb(0, 171, 240, 0.3);
   width: 100%;
   padding: 0.5rem;
   display: flex;

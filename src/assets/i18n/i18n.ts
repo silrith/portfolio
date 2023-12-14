@@ -5,7 +5,8 @@ import de from "@/assets/i18n/de.json";
 
 
 const userLanguage = navigator.language.substring(0,2);
-localStorage.setItem('lang', userLanguage)
+const activeLanguage = localStorage.getItem("lang");
+if(activeLanguage == null || activeLanguage == undefined) localStorage.setItem('lang', userLanguage)
 
 const messages = {
   en: en,
