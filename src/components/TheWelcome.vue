@@ -226,7 +226,7 @@ export default defineComponent({
     background-size: contain;
     justify-content: center;
     align-items: center;
-    padding: 5% 4%;
+    padding: 10% 4%;
   }
 
   .home h1{
